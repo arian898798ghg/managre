@@ -95,7 +95,5 @@ builtins.__import__ = _bundle_import
 # Apply environment-backed configuration before starting.
 os.environ.setdefault("DATABASE_PATH", "/data/group_manager.db")
 
-# ==================== FIXED PART ====================
-# Load the main module and actually start the bot
-main_module = _load_bundled("main")
-main_module.main()   # این خط حیاتی است
+# Load and run the original main module.
+_load_bundled("main")
